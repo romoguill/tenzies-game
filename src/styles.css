@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p { 
+  font-size: 1.3rem;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App {
+  background-color: #0B2434;
+  width: 360px;
+  height: 380px;
+  display: flex;
+}
+
+.container {
+  background-color: white;
+  margin: 3rem 2rem;
+  text-align: center;
+  border-radius: 10px;
+  padding: 3.4rem;
+}
+
+.section--game_description {
+  width: 85%;
+  margin: 0 auto;
+}

@@ -1,10 +1,12 @@
 import './styles.css';
-import './Components/Title';
+import Title from './Components/Title';
 
 function App() {
   return (
     <main className="App">
-      <div className="container"></div>
+      <div className="container">
+        <Title />
+      </div>
     </main>
   );
 }
