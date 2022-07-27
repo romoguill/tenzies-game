@@ -3,10 +3,11 @@ import { nanoid } from 'nanoid';
 import './styles.css';
 import Title from './Components/Title';
 import Die from './Components/Die';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   const [dice, setDice] = useState(allNewDice());
+  const [tenzies, setTenzies] = useState(false);
 
   const diceElements = dice.map((die) => {
     return (
@@ -33,8 +34,17 @@ function App() {
   }
 
   function rollDice() {
-    const newDice = allNewDice();
-    setDice(newDice);
+    setDice((prevDice) =>
+      prevDice.map((die) => {
+        return die.isHeld
+          ? { ...die }
+          : {
+              value: Math.ceil(Math.random() * 6),
+              isHeld: false,
+              id: nanoid(),
+            };
+      })
+    );
   }
 
   function holdDice(dieId) {
@@ -51,6 +61,10 @@ function App() {
       })
     );
   }
+
+  useEffect(() => {
+    console.log('Dice state changed');
+  }, [dice]);
 
   return (
     <main className="App">
