@@ -18,11 +18,17 @@ function App() {
     return diceArray;
   }
 
+  function rollDice() {
+    const newDice = allNewDice();
+    setDice(newDice);
+  }
+
   return (
     <main className="App">
       <div className="container">
         <Title />
         <section className="section--dice">{diceElements}</section>
+        <button onClick={rollDice}>Roll</button>
       </div>
     </main>
   );
